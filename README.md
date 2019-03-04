@@ -10,6 +10,7 @@
 | tslint-plugin-prettier                | (to be added) |
 | eslint-config-prettier                | (to be added) |
 | @typescript-eslint/parser             | (to be added) |
+| eslint-plugin-react-hooks | (to be added) |
 | @typescript-eslint/eslint-plugin      | (to be added) |
 | prettier                              | (to be added) |
 | stylelint                             | (to be added) |
@@ -20,7 +21,7 @@
 
 ### Install Dependencies & Add Config Files
 
-`yarn add -D tslint tslint-config-airbnb tslint-config-prettier tslint-plugin-prettier eslint-config-prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin prettier stylelint stylelint-config-prettier stylelint-config-recommended stylelint-config-styled-components stylelint-processor-styled-components`
+`yarn add -D tslint tslint-config-airbnb tslint-config-prettier tslint-plugin-prettier eslint-config-prettier eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin prettier stylelint stylelint-config-prettier stylelint-config-recommended stylelint-config-styled-components stylelint-processor-styled-components`
 
 ##### Create linter config files
 
