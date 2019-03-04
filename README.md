@@ -1,44 +1,161 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Typescript Project Config
 
-In the project directory, you can run:
+### Additional Dependencies
 
-### `npm start`
+| Package Name                          | Description   |
+| ------------------------------------- | ------------- |
+| tslint                                | (to be added) |
+| tslint-config-airbnb                  | (to be added) |
+| tslint-config-prettier                | (to be added) |
+| tslint-plugin-prettier                | (to be added) |
+| eslint-config-prettier                | (to be added) |
+| @typescript-eslint/parser             | (to be added) |
+| @typescript-eslint/eslint-plugin      | (to be added) |
+| prettier                              | (to be added) |
+| stylelint                             | (to be added) |
+| stylelint-config-prettier             | (to be added) |
+| stylelint-config-recommended          | (to be added) |
+| stylelint-config-styled-components    | (to be added) |
+| stylelint-processor-styled-components | (to be added) |
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Install Dependencies & Add Config Files
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+`yarn add -D tslint tslint-config-airbnb tslint-config-prettier tslint-plugin-prettier eslint-config-prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin prettier stylelint stylelint-config-prettier stylelint-config-recommended stylelint-config-styled-components stylelint-processor-styled-components`
 
-### `npm test`
+##### Create linter config files
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`touch .eslintrc .prettierrc .stylelintrc`
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### tsconfig.json
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```json
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["dom", "es6", "es2017", "esnext"],
+    "sourceMap": true,
+    "outDir": "build/",
+    "moduleResolution": "node",
+    "declaration": false,
+    "composite": false,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "newLine": "LF",
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
 
-### `npm run eject`
+    "allowJs": false,
+    "jsx": "react",
+    "rootDir": "src",
+    "baseUrl": "src",
+    "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "paths": {
+      "*": ["src/*", "node_modules/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build", "dist", "scripts"]
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### .eslintrc
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```json
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended",
+    "plugin:unicorn/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": false
+    },
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "@typescript-eslint/tslint",
+    "prettier",
+    "jest",
+    "unicorn"
+  ],
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "@typescript-eslint/class-name-casing": "warn",
+    "react/jsx-filename-extension": "off",
+    "unicorn/filename-case": "off",
+    "import/extensions": { "ts": "never", "tsx": "never" },
+    "no-use-before-define": "warn",
+    "no-param-reassign": "warn"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+### .prettierrc
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```json
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+### .stylelintrc
+
+```json
+{
+  "processors": ["stylelint-processor-styled-components"],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components",
+    "stylelint-config-prettier"
+  ]
+}
+```
