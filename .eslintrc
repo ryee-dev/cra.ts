@@ -1,0 +1,47 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended",
+    "plugin:unicorn/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": false
+    },
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "@typescript-eslint/tslint",
+    "prettier",
+    "jest",
+    "unicorn"
+  ],
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
+  "rules": {
+    "@typescript-eslint/class-name-casing": "warn",
+    "react/jsx-filename-extension": "off",
+    "unicorn/filename-case": "off",
+    "import/extensions": { "ts": "never", "tsx": "never" },
+    "no-use-before-define": "warn",
+    "no-param-reassign": "warn"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
