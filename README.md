@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # Typescript Project Config
 
 ### Additional Dependencies
@@ -159,3 +157,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   ]
 }
 ```
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
