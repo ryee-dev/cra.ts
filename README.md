@@ -4,20 +4,20 @@
 
 | Package Name                          | Description   |
 | ------------------------------------- | ------------- |
-| tslint                                | (to be added) |
-| tslint-config-airbnb                  | (to be added) |
-| tslint-config-prettier                | (to be added) |
-| tslint-plugin-prettier                | (to be added) |
-| eslint-config-prettier                | (to be added) |
-| @typescript-eslint/parser             | (to be added) |
-| eslint-plugin-react-hooks | (to be added) |
-| @typescript-eslint/eslint-plugin      | (to be added) |
-| prettier                              | (to be added) |
-| stylelint                             | (to be added) |
-| stylelint-config-prettier             | (to be added) |
-| stylelint-config-recommended          | (to be added) |
-| stylelint-config-styled-components    | (to be added) |
-| stylelint-processor-styled-components | (to be added) |
+| [tslint](https://github.com/palantir/tslint) | An extensible linter for the TypeScript language. |
+| [tslint-config-airbnb](https://github.com/progre/tslint-config-airbnb) | A TSLint config for Airbnb JavaScript Style. |
+| [tslint-config-prettier](https://github.com/prettier/tslint-config-prettier) | Use tslint with prettier without any conflict. |
+| [tslint-plugin-prettier](https://github.com/prettier/tslint-plugin-prettier) | Runs Prettier as a TSLint rule and reports differences as individual TSLint issues. |
+| [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) | Turns off all rules that are unnecessary or might conflict with Prettier. |
+| [@typescript-eslint/parser](https://github.com/eslint/typescript-eslint-parser) | An ESLint-specific parser which leverages `typescript-estree` and is designed to be used as a replacement for ESLint's default parser, `espree`. |
+| [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) | This ESLint plugin enforces the [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html). |
+| [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin) | An ESLint-specific plugin which, when used in conjunction with `@typescript-eslint/parser`, allows for TypeScript-specific linting rules to run. |
+| [prettier](https://github.com/prettier/prettier) | Prettier is an opinionated code formatter. |
+| [stylelint](https://github.com/stylelint/stylelint) | A mighty, modern linter that helps you avoid errors and enforce conventions in your styles. |
+| [stylelint-config-prettier](https://github.com/prettier/stylelint-config-prettier) | Turns off all rules that are unnecessary or might conflict with prettier. |
+| [stylelint-config-recommended](https://github.com/stylelint/stylelint-config-recommended) | The recommended shareable config for stylelint. |
+| [stylelint-config-styled-components](https://github.com/styled-components/stylelint-config-styled-components) | The shareable stylelint config for stylelint-processor-styled-components. |
+| [stylelint-processor-styled-components](https://github.com/styled-components/stylelint-processor-styled-components) | Lint your styled components with stylelint. |
 
 ### Install Dependencies & Add Config Files
 
