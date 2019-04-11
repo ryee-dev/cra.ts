@@ -37,7 +37,11 @@
     "unicorn/filename-case": "off",
     "import/extensions": { "ts": "never", "tsx": "never" },
     "no-use-before-define": "warn",
-    "no-param-reassign": "warn"
+    "no-param-reassign": "warn",
+    "unicorn/prevent-abbreviations": "off",
+    "no-plusplus": "warn",
+    "@typescript-eslint/no-var-requires": "warn",
+    "no-restricted-globals": "warn"
   },
   "settings": {
     "import/resolver": {
