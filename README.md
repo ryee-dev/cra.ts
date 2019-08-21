@@ -2,26 +2,19 @@
 
 ### Additional Dependencies
 
-| Package Name                          | Description   |
-| ------------------------------------- | ------------- |
-| [tslint](https://github.com/palantir/tslint) | An extensible linter for the TypeScript language. |
-| [tslint-config-airbnb](https://github.com/progre/tslint-config-airbnb) | A TSLint config for Airbnb JavaScript Style. |
-| [tslint-config-prettier](https://github.com/prettier/tslint-config-prettier) | Use tslint with prettier without any conflict. |
-| [tslint-plugin-prettier](https://github.com/prettier/tslint-plugin-prettier) | Runs Prettier as a TSLint rule and reports differences as individual TSLint issues. |
+| Package Name                                                 | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) | Turns off all rules that are unnecessary or might conflict with Prettier. |
 | [@typescript-eslint/parser](https://github.com/eslint/typescript-eslint-parser) | An ESLint-specific parser which leverages `typescript-estree` and is designed to be used as a replacement for ESLint's default parser, `espree`. |
 | [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) | This ESLint plugin enforces the [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html). |
 | [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin) | An ESLint-specific plugin which, when used in conjunction with `@typescript-eslint/parser`, allows for TypeScript-specific linting rules to run. |
-| [prettier](https://github.com/prettier/prettier) | Prettier is an opinionated code formatter. |
-| [stylelint](https://github.com/stylelint/stylelint) | A mighty, modern linter that helps you avoid errors and enforce conventions in your styles. |
+| [prettier](https://github.com/prettier/prettier)             | Prettier is an opinionated code formatter.                   |
+| [stylelint](https://github.com/stylelint/stylelint)          | A mighty, modern linter that helps you avoid errors and enforce conventions in your styles. |
 | [stylelint-config-prettier](https://github.com/prettier/stylelint-config-prettier) | Turns off all rules that are unnecessary or might conflict with prettier. |
-| [stylelint-config-recommended](https://github.com/stylelint/stylelint-config-recommended) | The recommended shareable config for stylelint. |
-| [stylelint-config-styled-components](https://github.com/styled-components/stylelint-config-styled-components) | The shareable stylelint config for stylelint-processor-styled-components. |
-| [stylelint-processor-styled-components](https://github.com/styled-components/stylelint-processor-styled-components) | Lint your styled components with stylelint. |
 
 ### Install Dependencies & Add Config Files
 
-`yarn add -D tslint tslint-config-airbnb tslint-config-prettier tslint-plugin-prettier eslint-config-airbnb eslint-config-prettier eslint-config-unicorn eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-jest eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin prettier stylelint stylelint-config-prettier stylelint-config-recommended stylelint-config-styled-components stylelint-processor-styled-components`
+`yarn add -D eslint-config-airbnb eslint-config-prettier eslint-config-unicorn eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-jest eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin prettier stylelint stylelint-config-prettier stylelint-config-recommended stylelint-config-styled-components stylelint-processor-styled-components`
 
 ##### Create linter config files
 
@@ -97,6 +90,7 @@
     "project": "./tsconfig.json"
   },
   "plugins": [
+    "react-hooks",
     "@typescript-eslint",
     "@typescript-eslint/tslint",
     "prettier",
@@ -110,12 +104,17 @@
     "jest": true
   },
   "rules": {
+    "react-hooks/rules-of-hooks": "error",
     "@typescript-eslint/class-name-casing": "warn",
     "react/jsx-filename-extension": "off",
     "unicorn/filename-case": "off",
     "import/extensions": { "ts": "never", "tsx": "never" },
     "no-use-before-define": "warn",
-    "no-param-reassign": "warn"
+    "no-param-reassign": "warn",
+    "unicorn/prevent-abbreviations": "off",
+    "no-plusplus": "warn",
+    "@typescript-eslint/no-var-requires": "warn",
+    "no-restricted-globals": "warn"
   },
   "settings": {
     "import/resolver": {
@@ -159,6 +158,10 @@
 }
 ```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
+### To-Do
 
+- [ ]  add links and descriptions for remaining dependencies
+
+- [ ]  add brief explanations for important/most-used linter preferences
