@@ -37,7 +37,7 @@
     "composite": false,
     "strict": true,
     "noImplicitAny": true,
-    "strictNullChecks": true,
+    "strictNullChecks": false,
     "strictFunctionTypes": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
@@ -47,19 +47,16 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "newLine": "LF",
-
     "experimentalDecorators": true,
     "skipLibCheck": true,
-
     "allowJs": false,
-    "jsx": "react",
+    "jsx": "preserve",
     "rootDir": "src",
-    "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "suppressImplicitAnyIndexErrors": true,
-    "paths": {
-      "*": ["src/*", "node_modules/*"]
-    }
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "build", "dist", "scripts"]
@@ -73,55 +70,62 @@
 ```json
 {
   "extends": [
+    "airbnb-base",
     "plugin:@typescript-eslint/recommended",
-    "airbnb",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react",
-    "plugin:prettier/recommended",
-    "plugin:jest/recommended",
-    "plugin:unicorn/recommended"
+    "plugin:react/recommended"
   ],
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": false
-    },
-    "project": "./tsconfig.json"
-  },
-  "plugins": [
-    "react-hooks",
-    "@typescript-eslint",
-    "@typescript-eslint/tslint",
-    "prettier",
-    "jest",
-    "unicorn"
-  ],
+  "plugins": ["@typescript-eslint/eslint-plugin"],
   "env": {
+    "browser": false,
     "node": true,
-    "es6": true,
-    "browser": true,
     "jest": true
-  },
-  "rules": {
-    "react-hooks/rules-of-hooks": "error",
-    "@typescript-eslint/class-name-casing": "warn",
-    "react/jsx-filename-extension": "off",
-    "unicorn/filename-case": "off",
-    "import/extensions": { "ts": "never", "tsx": "never" },
-    "no-use-before-define": "warn",
-    "no-param-reassign": "warn",
-    "unicorn/prevent-abbreviations": "off",
-    "no-plusplus": "warn",
-    "@typescript-eslint/no-var-requires": "warn",
-    "no-restricted-globals": "warn"
   },
   "settings": {
     "import/resolver": {
+      "typescript": {},
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
       }
     }
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.js"],
+      "rules": { "@typescript-eslint/no-var-requires": "off" }
+    }
+  ],
+  "rules": {
+    "radix": 0,
+    "arrow-body-style": 0,
+    "no-underscore-dangle": 0,
+    "class-methods-use-this": 0,
+    "no-confusing-arrow": ["warn"],
+    "no-return-assign": ["warn"],
+    "@typescript-eslint/camelcase": ["warn"],
+    "max-len": ["warn"],
+    "no-unused-vars": "off",
+    "semi": [2, "always"],
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
+    "import/extensions": ["off"],
+    "no-param-reassign": [2, { "props": false }],
+    "@typescript-eslint/no-empty-interface": 0,
+    "no-nested-ternary": "warn",
+    "react/display-name": "warn",
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": { "multiline": true, "minProperties": 5 },
+        "ObjectPattern": { "multiline": true, "minProperties": 5 },
+        "ImportDeclaration": { "multiline": true, "minProperties": 5 },
+        "ExportDeclaration": { "multiline": true, "minProperties": 5 }
+      }
+    ],
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "comma-dangle": "warn"
   }
 }
 ```
