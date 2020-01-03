@@ -14,7 +14,10 @@
 
 ### Install Dependencies & Add Config Files
 
-`yarn add -D eslint-config-airbnb eslint-config-prettier eslint-config-unicorn eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-jest eslint-plugin-react eslint-plugin-react-hooks @typescript-eslint/parser @typescript-eslint/eslint-plugin prettier stylelint stylelint-config-prettier stylelint-config-recommended stylelint-config-styled-components stylelint-processor-styled-components`
+`yarn add -D typescript @types/jest @types/node @types/react @types/react-dom @types/styled-components eslint-config-airbnb eslint-config-prettier eslint-config-unicorn eslint-plugin-import eslint-plugin-jest eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-unicorn @typescript-eslint/parser @typescript-eslint/eslint-plugin prettier stylelint stylelint-config-prettier stylelint-config-recommended stylelint-config-styled-components stylelint-processor-styled-components`
+
+##### (optional) Update dependencies to latest version
+`yarn upgrade --latest`
 
 ##### Create linter config files
 
