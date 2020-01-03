@@ -34,7 +34,7 @@
     "module": "esnext",
     "lib": ["dom", "es6", "es2017", "esnext"],
     "sourceMap": true,
-    "outDir": "build/",
+    "outDir": "public/",
     "moduleResolution": "node",
     "declaration": false,
     "composite": false,
@@ -61,8 +61,12 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "build", "dist", "scripts"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": ["node_modules", "public"]
 }
 ```
 
